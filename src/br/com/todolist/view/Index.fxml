@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="633.0" prefWidth="670.0" style="-fx-background-color: #80d4ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.todolist.controller.IndexController">
+   <children>
+        
+            <Label fx:id="lbDataR" layoutX="25.0" layoutY="139.0" text="Data para Realizar:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+            <DatePicker fx:id="dpDataPicker" layoutX="28.0" layoutY="170.0" promptText="Escolha uma data..." style="-fx-border-color: blue;" />
+            <Label fx:id="lbStatusTar" layoutX="28.0" layoutY="212.0" text="Status da Tarefa:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+            <Label fx:id="lbComents" layoutX="28.0" layoutY="363.0" text="Comentários:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+            <TextField fx:id="tfStatus" layoutX="28.0" layoutY="243.0" prefHeight="25.0" prefWidth="174.0" promptText="Defina um status..." style="-fx-border-color: blue;" />
+            <Label fx:id="lbClassTarefa" layoutX="28.0" layoutY="287.0" text="Classificação da Tarefa:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+            <TextField fx:id="tfClassTarefa" layoutX="28.0" layoutY="317.0" prefHeight="25.0" prefWidth="174.0" promptText="Informe a importância..." style="-fx-border-color: blue;" />
+            <TextArea fx:id="taComents" layoutX="27.0" layoutY="393.0" prefHeight="72.0" prefWidth="275.0" promptText="Digite um comentário..." style="-fx-border-color: blue;" />
+      <Button fx:id="btSalvar" layoutX="22.0" layoutY="496.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #80d4ff; -fx-border-color: black;">
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Downloads/imagens/save.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Text fill="#0046ff" layoutX="192.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Tarefas">
+         <font>
+            <Font name="Georgia" size="40.0" />
+         </font>
+      </Text>
+      <Button fx:id="btSalvar1" layoutX="124.0" layoutY="494.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #80d4ff; -fx-border-color: black;">
+         <graphic>
+            <ImageView fitHeight="74.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Downloads/imagens/adiar.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btSalvar2" layoutX="232.0" layoutY="495.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #80d4ff; -fx-border-color: black;">
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Downloads/imagens/concluido.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btSalvar3" layoutX="335.0" layoutY="496.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #80d4ff; -fx-border-color: black;">
+         <graphic>
+            <ImageView fitHeight="74.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Downloads/imagens/excluir.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btSalvar4" layoutX="445.0" layoutY="495.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #80d4ff; -fx-border-color: black;">
+         <graphic>
+            <ImageView fitHeight="72.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Downloads/imagens/limpar.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
