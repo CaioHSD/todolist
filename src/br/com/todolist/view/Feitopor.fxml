@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="389.0" style="-fx-background-color: #fff7e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.todolist.controller.SobreController">
+   <children>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="98.0" layoutY="72.0">
+         <image>
+            <Image url="@../imagens/sobretarefa.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="97.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial;" text="Desenvolvido por Caio Delfino">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="24.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial;" text="Cursando Técnico de Desenvolvimento de Sistemas">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="btClose" layoutX="175.0" layoutY="455.0" mnemonicParsing="false" onAction="#btClickClose" style="-fx-background-color: #4d94ff;" text="Close" />
+      <Text layoutX="102.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial;" text="Escola SENAI &quot;Ricardo Lerner&quot;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="128.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial;" text="To Do List">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

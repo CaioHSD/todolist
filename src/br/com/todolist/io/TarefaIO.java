@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -54,21 +55,21 @@ public class TarefaIO {
 		writer.write(proxId + "");
 		writer.close();
 	}
- 
+
 	public static List<Tarefa> read() throws IOException {
 		File arqTarefa = new File(FILE_TAREFA);
-		List <Tarefa> tarefas = new ArrayList<>();
+		List<Tarefa> tarefas = new ArrayList<>();
 		FileReader reader = new FileReader(arqTarefa);
 		BufferedReader buff = new BufferedReader(reader);
 		String linha;
-		while((linha = buff.readLine()) != null) {
+		while ((linha = buff.readLine()) != null) {
 			String[] vetor = linha.split(";");
 			Tarefa t = new Tarefa();
 			t.setId(Long.parseLong(vetor[0]));
 			DateTimeFormatter padraoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 			t.setDataCriacao(LocalDate.parse(vetor[1], padraoData));
 			t.setDataLimite(LocalDate.parse(vetor[2], padraoData));
-			if((!vetor[3].isEmpty())) {
+			if ((!vetor[3].isEmpty())) {
 				t.setDataConcluida(LocalDate.parse(vetor[3], padraoData));
 			}
 			t.setDescricao(vetor[4]);
@@ -79,8 +80,43 @@ public class TarefaIO {
 		}
 		reader.close();
 		buff.close();
-		System.out.println(tarefas.size());
+		Collections.sort(tarefas);
 		return tarefas;
+
 	}
 
+	public static void saveTarefas(List<Tarefa> tarefas) throws IOException {
+		File arqTarefas = new File(FILE_TAREFA);
+		FileWriter writer = new FileWriter(arqTarefas);
+		for (Tarefa t : tarefas) {
+			writer.write(t.formatToSave());
+		}
+		writer.close();
+	}
+
+	public static long proximoId() throws IOException {
+		long exibeId;
+		Scanner sc = new Scanner(new File(FILE_ID));
+		exibeId = sc.nextLong();
+		sc.close();
+		
+		return exibeId;
+	}
+	
+	public static void exportHtml(List<Tarefa> tarefas, File arquivo) throws IOException {
+		FileWriter writer = new FileWriter(arquivo);
+		writer.write("<html>\n");
+		writer.write("<body>\n");
+		writer.write("<h1>Lista de Tarefas</h1>\n");
+		writer.write("<ul>\n");
+		writer.write("<li>\n");
+		for (Tarefa tarefa : tarefas) {
+			writer.write("<li>" +tarefa.getDataLimite()+ " - " + tarefa.getDescricao()+"</li>\n");
+		}
+		
+		writer.write("</ul>\n");
+		writer.write("</body\n");
+		writer.write("</html>");
+		writer.close();
+	}
 }

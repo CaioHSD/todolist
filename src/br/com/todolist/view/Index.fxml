@@ -3,6 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
@@ -20,7 +23,7 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-            <DatePicker fx:id="dpDataPicker" layoutX="28.0" layoutY="170.0" prefHeight="27.0" prefWidth="275.0" promptText="Escolha uma data..." style="-fx-border-color: blue;" />
+            <DatePicker fx:id="dpDataPicker" layoutX="28.0" layoutY="170.0" prefHeight="27.0" prefWidth="142.0" promptText="Escolha uma data..." style="-fx-border-color: blue;" />
             <Label fx:id="lbStatusTar" layoutX="28.0" layoutY="212.0" text="Status da Tarefa:">
          <font>
             <Font size="14.0" />
@@ -36,51 +39,51 @@
          </font></Label>
             <TextField fx:id="tfClassTarefa" layoutX="28.0" layoutY="317.0" prefHeight="27.0" prefWidth="275.0" promptText="Informe a importância..." style="-fx-border-color: blue;" />
             <TextArea fx:id="taComents" layoutX="27.0" layoutY="393.0" prefHeight="72.0" prefWidth="275.0" promptText="Digite um comentário..." style="-fx-border-color: blue;" />
-      <Text fill="#0046ff" layoutX="192.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Tarefas">
+      <Text fill="#0046ff" layoutX="219.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Tarefas">
          <font>
             <Font name="Georgia" size="40.0" />
          </font>
       </Text>
-      <Button fx:id="btSalvar" layoutX="22.0" layoutY="496.0" mnemonicParsing="false" onAction="#btSalvarClick" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #80d4ff; -fx-border-color: black;">
+      <Button fx:id="btSalvar" layoutX="22.0" layoutY="496.0" mnemonicParsing="false" onAction="#btSalvarClick" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #3385ff;">
          <graphic>
             <ImageView fitHeight="70.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/imagens/save.png" />
+                  <Image url="@../imagens/save.png" />
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="btAdiar" layoutX="124.0" layoutY="494.0" mnemonicParsing="false" onAction="#btAdiarClick" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #80d4ff; -fx-border-color: black;">
+      <Button fx:id="btAdiar" layoutX="124.0" layoutY="494.0" mnemonicParsing="false" onAction="#btAdiarClick" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #3385ff;">
          <graphic>
             <ImageView fitHeight="74.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/imagens/adiar.jpg" />
+                  <Image url="@../imagens/adiar.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btConcluir" layoutX="232.0" layoutY="495.0" mnemonicParsing="false" onAction="#btConcluirClick" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #80d4ff; -fx-border-color: black;">
+      <Button fx:id="btConcluir" layoutX="232.0" layoutY="495.0" mnemonicParsing="false" onAction="#btConcluirClick" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #3385ff;">
          <graphic>
             <ImageView fitHeight="82.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/imagens/concluido.jpg" />
+                  <Image url="@../imagens/concluido.jpg" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btExcluir" layoutX="335.0" layoutY="496.0" mnemonicParsing="false" onAction="#btExcluirClick" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #80d4ff; -fx-border-color: black;">
+      <Button fx:id="btExcluir" layoutX="335.0" layoutY="496.0" mnemonicParsing="false" onAction="#btExcluirClick" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #3385ff;">
          <graphic>
             <ImageView fitHeight="74.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/imagens/excluir.jpg" />
+                  <Image url="@../imagens/excluir.jpg" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btLimpar" layoutX="445.0" layoutY="495.0" mnemonicParsing="false" onAction="#btLimparClick" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #80d4ff; -fx-border-color: black;">
+      <Button fx:id="btLimpar" layoutX="445.0" layoutY="495.0" mnemonicParsing="false" onAction="#btLimparClick" prefHeight="72.0" prefWidth="60.0" style="-fx-background-color: #3385ff;">
          <graphic>
             <ImageView fitHeight="72.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/imagens/limpar.jpg" />
+                  <Image url="@../imagens/limpar.jpg" />
                </image>
             </ImageView>
          </graphic>
@@ -91,5 +94,28 @@
           <TableColumn fx:id="tcTarefa" prefWidth="269.0" text="Tarefa" />
         </columns>
       </TableView>
+      <TextField fx:id="tfCodigo" layoutX="24.0" layoutY="112.0" prefHeight="27.0" prefWidth="82.0" promptText="ID tarefa" style="-fx-border-color: blue;" />
+      <Text layoutX="28.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="dpDataConclusao" disable="true" layoutX="181.0" layoutY="171.0" visible="false" />
+      <Text fx:id="lbConclusao" disable="true" layoutX="181.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de conclusão:" visible="false" />
+      <MenuBar layoutX="10.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Arquivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#miExport" text="Exportar como HTML" />
+                  <MenuItem mnemonicParsing="false" onAction="#miSair" text="Sair" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ajuda">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#miSobre" text="Sobre" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>
